@@ -21,7 +21,7 @@ Node/Express/MongoDB/BCrypt App that signs up and signs in users!
 * ```POST``` requests to ```/sign-in``` will compare the plain text password with the bcrypt hash stored in the Users database and return the status of loggedIn ```true``` or ```false```
 * ```POST``` requests to ```/sign-up``` will has the password and send to the user database to store (if the user with this username does not already exist)
 * ```GET``` requests to ```/users``` will return a list of usernames that are currently signed up to validated users, invalid users will get an error message
-* ```GET``` requests to ```/secret``` will give validated users access to the secret area, invalid users will be locked out 
+* ```GET``` requests to ```/secret``` will give validated users access to the secret area, invalid users will be locked out
 
 ## Tests
 
@@ -31,4 +31,4 @@ Node/Express/MongoDB/BCrypt App that signs up and signs in users!
 
 ## UML Diagram
 
-![UML diagram of basic express server project](./Lab06.png)
+![UML diagram of basic express server project](./Lab07.png)
