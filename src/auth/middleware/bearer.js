@@ -1,5 +1,8 @@
 'use strict';
 
+require('dotenv').config();
+
+const sessions = process.env.STRATEGY === "sessions" ? true : false;
 const users = require('../models/users.js')
 
 module.exports = async (req, res, next) => {
@@ -12,6 +15,7 @@ module.exports = async (req, res, next) => {
     req.token = validUser.token;
     next();
   } catch (e) {
-    res.status(403).send('Access denied');
+    res.status(403).send("Access denied");
+    // next({ status: 403, message: 'Access denied' })
   }
 }
