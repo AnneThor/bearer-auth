@@ -4,6 +4,7 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const session = require('express-session');
 
 // Esoteric Resources
 const errorHandler = require('./error-handlers/500.js');
@@ -18,6 +19,19 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+if (process.env.STRATEGY === "sessions") {
+  // Sessions security
+  app.use(session({
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    // have to set to false bc not using https://
+    cookie: { secure: false,
+              //maximum age is 15 minutes
+              maxAge: 1000 * 60 * 15 },
+  }));
+}
 
 // Routes
 app.use(authRoutes);
