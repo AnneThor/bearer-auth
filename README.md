@@ -3,7 +3,7 @@ Node/Express/MongoDB/BCrypt App that signs up and signs in users!
 
 ## Author: Anne Thorsteinson
 
-**[Tests](https://github.com/AnneThor/authentication/actions)**
+**[Tests](https://github.com/AnneThor/bearer-auth/actions)**
 
 **[Front End](https://bearer-auth-at.herokuapp.com/)**
 
